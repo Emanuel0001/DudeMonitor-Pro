@@ -99,7 +99,7 @@ function Login() {
           <button disabled={disabledButton()} type="submit">Login</button>
         </form>
         <p className="link-register">
-          Não tem uma conta? <a href="/cadastro">Cadastre-se</a>
+          Não tem uma conta? <a href="/register">Cadastre-se</a>
         </p>
       </section>
     </div>
