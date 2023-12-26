@@ -56,7 +56,7 @@ function Register() {
         const div = document.getElementById('password2')
         const label = document.getElementById('label-password2')
 
-        if(newPassword === password && newPassword.length >= 8){
+        if(newPassword.length >= 8){
             div.style.border = " solid 1px #633CFF"
             label.style.color = "#633CFF"
             setIsConfirmPasswordValid(true)
@@ -89,7 +89,7 @@ function Register() {
             <p>Let’s get you started sharing your links!</p>
           </div>
           
-          <label htmlFor="email" className="label">Email address</label>
+          <label htmlFor="email" className="label" id="label-email">Email address</label>
           <div className="input-container">
             <img src={IconEmail} className="input-icon" />
             <input
@@ -104,7 +104,7 @@ function Register() {
             />
           </div>
           
-          <label htmlFor="password" className="label">Create password</label>
+          <label htmlFor="password" className="label" id="label-password">Create password</label>
           <div className="input-container">
             <img src={IconPassword} className="input-icon" />
             <input
@@ -118,7 +118,7 @@ function Register() {
             />
           </div>
 
-          <label htmlFor="password" className="label">Confirm Password</label>
+          <label htmlFor="password" className="label" id="label-password2">Confirm Password</label>
           <div className="input-container">
             <img src={IconPassword} className="input-icon" />
             <input

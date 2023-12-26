@@ -231,6 +231,7 @@ function Profile() {
                   type="text"
                   id="nome"
                   name="nome"
+                  className="inputs-profile"
                   value={name}
                   onChange={handleNameChange}
                   required
@@ -240,6 +241,7 @@ function Profile() {
                   type="text"
                   id="sobrenome"
                   name="sobrenome"
+                  className="inputs-profile"
                   value={sobrenome}
                   onChange={handleLastNameChange}
                   required
@@ -249,6 +251,7 @@ function Profile() {
                   placeholder="ben@example.com"
                   type="email"
                   id="email"
+                  className="inputs-profile"
                   name="email"
                   value={email}
                   onChange={handleEmailChange}

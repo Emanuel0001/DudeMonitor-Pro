@@ -412,14 +412,17 @@ p {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"], .email {
   width: 396px;
   height: 48px;
-  padding: 8px 10px;
+  padding: 8px 15px;
   font-size: 16px;
   border: 1px solid #d9d9d9;
   border-radius: 8px;
   box-sizing: border-box;
+}
+
+.inputs-profile {
   margin-top: 10px;
 }
 
