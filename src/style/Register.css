@@ -20,10 +20,9 @@
   header {
     text-align: center;
   }
-  .logo-devlinks {
-    padding: 10px 0 50px;
-  }
-  
+  .logo-devlinks-register {
+    padding: 50px 0 25px;
+}
   form {
     display: flex;
     flex-direction: column;

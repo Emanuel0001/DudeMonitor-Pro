@@ -80,7 +80,7 @@ function Register() {
   return (
     <div className="login-container">
       <header>
-        <img className="logo-devlinks" src={Logo}></img>
+        <img className="logo-devlinks-register" src={Logo}></img>
       </header>
       <section>
         <form>
@@ -89,7 +89,7 @@ function Register() {
             <p>Let’s get you started sharing your links!</p>
           </div>
           
-          <label htmlFor="email" id="label-email">Email address</label>
+          <label htmlFor="email" className="label">Email address</label>
           <div className="input-container">
             <img src={IconEmail} className="input-icon" />
             <input
@@ -104,7 +104,7 @@ function Register() {
             />
           </div>
           
-          <label htmlFor="password" id="label-password">Create password</label>
+          <label htmlFor="password" className="label">Create password</label>
           <div className="input-container">
             <img src={IconPassword} className="input-icon" />
             <input
@@ -118,7 +118,7 @@ function Register() {
             />
           </div>
 
-          <label htmlFor="password" id="label-password2">Confirm Password</label>
+          <label htmlFor="password" className="label">Confirm Password</label>
           <div className="input-container">
             <img src={IconPassword} className="input-icon" />
             <input

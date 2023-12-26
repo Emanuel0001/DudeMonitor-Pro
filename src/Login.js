@@ -1,9 +1,8 @@
-import "./style/Login.css";
 import React, { useState } from 'react';
 import Logo from "./images/logo-devlinks-large.svg";
 import IconEmail from "./images/icon-email.svg"
 import IconPassword from "./images/icon-password.svg"
-
+import './style/Login.css'
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -68,7 +67,7 @@ function Login() {
             <p>Add your details below to get back into the app</p>
           </div>
           
-          <label htmlFor="email" id="label-email">Email address</label>
+          <label htmlFor="email" className="label">Email address</label>
           <div className="input-container">
             <img src={IconEmail} className="input-icon" />
             <input
@@ -83,7 +82,7 @@ function Login() {
             />
           </div>
           
-          <label htmlFor="password" id="label-password">Password</label>
+          <label htmlFor="password" className="label">Password</label>
           <div className="input-container">
             <img src={IconPassword} className="input-icon" />
             <input
@@ -96,7 +95,7 @@ function Login() {
               required
             />
           </div>
-          <button disabled={disabledButton()} type="submit">Login</button>
+          <button disabled={disabledButton()} type="submit" href="/dashboard">Login</button>
         </form>
         <p className="link-register">
           Não tem uma conta? <a href="/register">Cadastre-se</a>
