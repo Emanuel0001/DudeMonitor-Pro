@@ -2,19 +2,30 @@ import { useState } from 'react';
 import './Input.css'
 
 const InputPassword= ({ onPasswordChange }) => {
-  const [password, setPassword] = useState('');
+  const [isPasswordValid, setIsPasswordValid] = useState(false)
   
   const handlePasswordChange = (event) => {
     const newPassword = event.target.value;
-    setPassword(newPassword);
 
-    if(password.length > 0) {
-        const div = document.getElementById("password")
+    onPasswordChange && onPasswordChange(newPassword, isPasswordValid);
+    
+      const div = document.getElementById("password")
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+     
+      if(passwordRegex.test(newPassword)) {
+          div.style = "color: purple"
+          div.style = "border: solid 1px #633cff"
+          setIsPasswordValid(true)
+         
+      } else {
         div.style = "color: red"
+        div.style = "border: solid 1px red"
+        setIsPasswordValid(false)
+  
+      }
     }
-
-    onPasswordChange(newPassword)
-  }
+ 
+ 
   return (
     <div>
       <label htmlFor="password" className="label">Password</label>
@@ -23,7 +34,6 @@ const InputPassword= ({ onPasswordChange }) => {
           placeholder="Digite sua senha"
           name="password"
           id='password'
-          value={password}
           onChange={handlePasswordChange}
           required
         />

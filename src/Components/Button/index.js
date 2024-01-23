@@ -1,8 +1,8 @@
 import './Button.css'
 
-const Button = ({value, disabled}) => {
+const Button = ({value, isDisabled}) => {
     return (
-            <button disabled={disabled}>{value}</button>
+            <button disabled={isDisabled}>{value}</button>
     )
 }
 
