@@ -1,0 +1,19 @@
+button {
+  display: flex;
+  padding: 11px 27px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 8px;
+  background: #633cff;
+  border: none;
+
+  color: var(--White, #fff);
+  /* Heading S */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+}

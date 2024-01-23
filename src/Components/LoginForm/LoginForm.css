@@ -1,0 +1,9 @@
+.containerLoginForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.conteudo {
+    width:100%;
+}

@@ -1,11 +1,11 @@
-import "./style/Dashboard.css";
+import "./Profile.css";
 import React, { useState } from "react";
-import Logo from "./images/logo-devlinks-large.svg";
-import iconLinks from "./images/icon-links-header.svg";
-import iconProfile from "./images/icon-profile-details-header.svg";
-import smartPhone from "./images/illustration-phone-mockup.svg";
-import iconAdd from "./images/illustration-empty.svg";
-import uploadImg from "./images/icon-upload-image.svg";
+import Logo from "../../images/logo-devlinks-large.svg";
+import iconLinks from "../../images/icon-links-header.svg";
+import iconProfile from "../../images/icon-profile-details-header.svg";
+import smartPhone from "../../images/illustration-phone-mockup.svg";
+import iconAdd from "../../images/illustration-empty.svg";
+import uploadImg from "../../images/icon-upload-image.svg";
 
 function Profile() {
   const [dados, setDados] = useState([

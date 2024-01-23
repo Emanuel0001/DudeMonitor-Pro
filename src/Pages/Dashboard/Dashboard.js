@@ -1,10 +1,10 @@
-import "./style/Dashboard.css";
+import "./Dashboard.css";
 import React, { useState } from "react";
-import Logo from "./images/logo-devlinks-large.svg";
-import iconLinks from "./images/icon-links-header.svg";
-import iconProfile from "./images/icon-profile-details-header.svg";
-import smartPhone from "./images/illustration-phone-mockup.svg";
-import iconAdd from "./images/illustration-empty.svg";
+import Logo from "../../images/logo-devlinks-large.svg";
+import iconLinks from "../../images/icon-links-header.svg";
+import iconProfile from "../../images/icon-profile-details-header.svg";
+import smartPhone from "../../images/illustration-phone-mockup.svg";
+import iconAdd from "../../images/illustration-empty.svg";
 
 function Dashboard() {
   const [dados, setDados] = useState([]);

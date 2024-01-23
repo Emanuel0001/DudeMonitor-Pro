@@ -1,8 +1,8 @@
-import "./style/Register.css";
+import "./Register.css";
 import React, { useState } from 'react';
-import Logo from "./images/logo-devlinks-large.svg";
-import IconEmail from "./images/icon-email.svg"
-import IconPassword from "./images/icon-password.svg"
+import Logo from "../../images/logo-devlinks-large.svg";
+import IconEmail from "../../images/icon-email.svg"
+import IconPassword from "../../images/icon-password.svg"
 
 function Register() {
     const [email, setEmail] = useState('');
