@@ -28,7 +28,7 @@ const InputPassword= ({ onPasswordChange }) => {
  
   return (
     <div>
-      <label htmlFor="password" className="label">Password</label>
+      <label htmlFor="password" className="label">Password:</label>
         <input
           type="password"
           placeholder="Digite sua senha"

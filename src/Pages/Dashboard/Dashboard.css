@@ -1,0 +1,19 @@
+body {
+    background-color: #070F1A;
+  }
+.container-dashboard {
+    display: flex;
+    justify-content: center;
+}
+  .conteudoDashboard {
+    background-color: transparent;
+    width: 70vw;
+    height: 90vh;
+    
+    border-top: solid 1px #232b38;
+    border-right: solid 1px #232b38;
+    border-bottom: solid 1px #232b38;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+

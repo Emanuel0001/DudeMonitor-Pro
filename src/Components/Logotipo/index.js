@@ -1,9 +1,10 @@
-import Logo from "../../images/logo-devlinks-large.svg";
+import './Logo.css'
+import Logo from "../../images/PlanoFundo.jpg";
 
 
 const Logotipo = () => {
     return (
-        <img className="logo" src={Logo}/>
+        <img src={Logo} className="logo"/>
     )
 }
 

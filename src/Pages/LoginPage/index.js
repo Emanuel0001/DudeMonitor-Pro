@@ -13,8 +13,8 @@ function LoginPage() {
     <div className="login-container">
       <Logotipo />
       <div className="conteudo">
+        <p>Welcome the DudeMonitor Pro</p> 
         <h2>login</h2>
-        <p>Add your details below to get back into the app</p>
       </div>
         <LoginForm retorno={realmenteRecebi}/>
     </div>

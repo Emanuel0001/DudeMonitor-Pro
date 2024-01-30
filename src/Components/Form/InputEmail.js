@@ -26,7 +26,7 @@ const InputEmail = ({ onEmailChange }) => {
   return (
     <div>
       <label htmlFor="password" className="label">
-        Email
+        User:
       </label>
       <input
         type="email"
