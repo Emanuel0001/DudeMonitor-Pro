@@ -10,7 +10,7 @@ body {
   height: 100vh; /* Ajuste conforme necessário para ocupar a altura da tela inteira */
 
   max-width: 400px; /* Define um tamanho máximo para a largura da div */
-  width: 100%; /* Garante que a div se ajuste à largura disponível */
+  width: 30vw; /* Garante que a div se ajuste à largura disponível */
   margin: 0 auto; /* Centraliza a div horizontalmente */
 
 

@@ -3,17 +3,22 @@ import Button from "../Button";
 import { useState } from "react";
 import InputEmail from "../Form/InputEmail";
 import InputPassword from "../Form/InputPassword";
+import axios from "axios";
 
 const LoginForm = ({ retorno }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-  console.log("button is", isButtonDisabled);
+  const url = "http://localhost:3001/login";
 
+  const [emailUser, setEmail] = useState("");
+  const [passwordUser, setPassword] = useState("");
 
+  const user = {
+    email: emailUser,
+    password: passwordUser
+  };
+  
   const [emailValid, setValidEmail] = useState();
   const [passwordValid, setValidPassword] = useState();
-  
+
   const handleEmailChange = (newEmail, isEmailValid) => {
     setEmail(newEmail);
     setValidEmail(isEmailValid);
@@ -24,16 +29,27 @@ const LoginForm = ({ retorno }) => {
     setValidPassword(isPasswordValid);
   };
 
-  function validateForm () {
+  function validateForm() {
     if (emailValid && passwordValid) {
-      return false
+      return false;
     } else {
-      return true
+      return true;
     }
-  };
+  }
+
+  const submitForm = (event) => {
+    event.preventDefault();
+      axios.post(url, user)
+      .then((response) => {
+        const data = response.data;
+        console.log(data.message)
+      })
+      .catch((error) => console.log(error));
+    console.log("submitou");
+    };
 
   return (
-    <form className="containerLoginForm">
+    <form className="containerLoginForm" onSubmit={submitForm}>
       <InputEmail onEmailChange={handleEmailChange} />
       <InputPassword onPasswordChange={handlePasswordChange} />
       <Button isDisabled={validateForm()} value="Login" />

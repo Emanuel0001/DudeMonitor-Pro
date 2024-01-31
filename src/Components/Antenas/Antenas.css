@@ -1,0 +1,130 @@
+.container-antenas {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.conteudo-titulado {
+  margin: 30px;
+}
+.conteudo-titulado h1 {
+  height: 20px;
+  font-weight: 200;
+  color: white;
+}
+
+.conteudo-titulado p {
+  height: 20px;
+  color: white;
+}
+
+.section-antenas {
+  display: flex;
+  overflow: auto;
+}
+
+.lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.lista li {
+  width: 30vw;
+  border-radius: 16px;
+  background-color: #232b38;
+}
+.lista li h1 {
+  color: white;
+}
+
+.titulo-e-estatus {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.download-backup {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.download-backup p {
+  color: white;
+  width: 80%;
+  text-align: center;
+}
+
+.buttonDown {
+  background-color: transparent;
+  width: 20%;
+}
+
+.download:hover {
+  color: #0282a0;
+}
+
+.ipAdress {
+  width: 100%;
+  text-align: center;
+}
+.ipAdress a {
+  color: #0282a0;
+  font-weight: 200;
+}
+
+.onlineStatus {
+    width: 16px;
+    height: 16px;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    transition: 500ms;
+    animation: piscapisca 3500ms infinite;
+}
+.offlineStatus {
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    border-radius: 50%;
+    transition: 500ms;
+    animation: piscapisca 3500ms infinite;
+}
+
+@keyframes piscapisca {
+    0% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

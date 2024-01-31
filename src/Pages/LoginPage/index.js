@@ -5,10 +5,11 @@ import Logotipo from "../../Components/Logotipo";
 import LoginForm from "../../Components/LoginForm";
 
 function LoginPage() {
-  
+
   const realmenteRecebi = (newEmail) => {
     console.log('estou na pagina principal', newEmail)
   }
+
   return (
     <div className="login-container">
       <Logotipo />

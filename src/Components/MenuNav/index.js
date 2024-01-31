@@ -3,6 +3,7 @@ import { FaHome } from "react-icons/fa";
 import { MdAddChart } from "react-icons/md";
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { TbHeartRateMonitor } from "react-icons/tb";
+import { FaWifi } from "react-icons/fa";
 import './Menu.css';
 
 const MenuNav = ({ onChangeWindow }) => {
@@ -26,6 +27,14 @@ const MenuNav = ({ onChangeWindow }) => {
             <b></b>
             <a href="#" name="monitor" onClick={() => handleItemClick('monitor')}>
               <i className="fa fa-user nav-icon"> <TbHeartRateMonitor size={32} /></i>
+            </a>
+          </li>
+
+          <li className={`nav-item ${activeNavItem === 'antenas' ? 'active' : ''}`}>
+            <b></b>
+            <b></b>
+            <a href="#" name="antenas" onClick={() => handleItemClick('antenas')}>
+              <i className="fa fa-user nav-icon"><FaWifi size={32} /></i>
             </a>
           </li>
 

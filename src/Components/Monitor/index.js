@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Monitor.css";
 import PercentageChart from "../PorcentageChart";
 import ColumnChart from "../PorcentageChart";
+import axios from "axios";
+import { io } from "socket.io-client";
 
 const Monitor = () => {
-  const [totalAntenas, setTotalAntenas] = useState(100);
-  const [antenasOnline, setTotalOnline] = useState(80);
-  const [antenasOffline, setTotalOffline] = useState(20);
+  const [totalAntenas, setTotalAntenas] = useState(0);
+  const [antenasOnline, setTotalOnline] = useState(0);
+  const [antenasOffline, setTotalOffline] = useState(0);
+  const url = "http://localhost:3001/listaAntenas";
 
   const data = [
     {
@@ -29,18 +32,38 @@ const Monitor = () => {
     },
   ];
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(url);
+        const data = response.data;
+        setTotalAntenas(data.total);
+        setTotalOnline(data.totalOnline);
+        setTotalOffline(data.totalOffline);
+      } catch (error) {
+        console.error("Erro ao buscar dados da API:", error);
+      }
+    };
+    fetchData();
+  }, []);
+  
+ const click = () => {
+   console.log('clicou')
+  };
+  
   return (
     <main className="content-main">
       <div className="conteudo-titulado">
         <h1>Monitoramento</h1>
         <p>Dashboard</p>
+        <button onClick={click}>atualize</button>
       </div>
       <section className="quadros-monitorados">
         <div className="quadro total">
           <h2>- Total -</h2>
           <h3>{totalAntenas}</h3>
         </div>
-        <div className="quadro online" >
+        <div className="quadro online">
           <h2>- Online -</h2>
           <h3>{antenasOnline}</h3>
         </div>
