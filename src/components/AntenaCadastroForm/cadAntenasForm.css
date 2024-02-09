@@ -1,0 +1,40 @@
+.container-antenasForm {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  
+  .conteudo-titulado {
+    margin: 30px;
+  }
+  .conteudo-titulado h1 {
+    height: 20px;
+    font-weight: 200;
+    color: white;
+  }
+  
+  .conteudo-titulado p {
+    height: 20px;
+    color: white;
+  }
+  
+
+  .container-formulario {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: auto;
+
+  }
+
+  .conteudo-form {
+    width: 50vw;
+  }
+
+  .div-button {
+    display: flex;
+    width: 100%;
+    margin-top: 5%;
+    justify-content: flex-end;
+  }
