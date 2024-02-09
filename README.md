@@ -1,71 +1,42 @@
-# Getting Started with Create React App
+# DudeMonitor-Pro
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O DudeMonitor-Pro é uma plataforma avançada de monitoramento de redes online, proporcionando uma visão abrangente e eficaz do status de rádios em sua rede. Com recursos intuitivos e uma interface amigável, esse sistema oferece praticidade e agilidade na gestão de redes.
 
-## Available Scripts
+## Funcionalidades Principais
 
-In the project directory, you can run:
+### Dashboard
 
-### `npm start`
+-   Visualize a quantidade total de rádios na rede.
+-   Monitore quantos rádios estão online e offline em tempo real.
+-   Tenha uma visão geral do status da rede de forma rápida e eficiente.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Tela de Antenas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   Observe todas as antenas da rede.
+-   Indicadores visuais indicam se a antena está online (🟢) ou offline (🔴).
+-   Acesse o IP de cada antena para configurações detalhadas.
+-   Facilidade em baixar o backup da antena afetada diretamente pela interface.
 
-### `npm test`
+### Sistema de Detecção
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   Detecte automaticamente falhas na rede.
+-   Receba alertas instantâneos sobre antenas offline.
+-   Baixe backups automaticamente para solução rápida dos problemas.
 
-### `npm run build`
+## Tecnologias Utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Front-end
+- React ![React](https://img.shields.io/badge/-React-blue)
+- HTML, CSS, JavaScript ![Web Technologies](https://img.shields.io/badge/-Web_Technologies-gray)
+- Componentização ![Componentization](https://img.shields.io/badge/-Componentization-orange)
+- React Cookie, React Router DOM ![React Libraries](https://img.shields.io/badge/-React_Libraries-lightblue)
+- React Toastify ![React Toastify](https://img.shields.io/badge/-React_Toastify-green)
+- Axios ![Axios](https://img.shields.io/badge/-Axios-yellowgreen)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# challend-link-sharing-app
+### Back-end
+- Express (Padrão MVC) ![Express](https://img.shields.io/badge/-Express-lightgray)
+- MongoDB, Mongoose ![MongoDB](https://img.shields.io/badge/-MongoDB-green)
+- JSON Web Token (JWT) ![JWT](https://img.shields.io/badge/-JWT-blue)
+- CORS (Cross-Origin Resource Sharing) ![CORS](https://img.shields.io/badge/-CORS-orange)
+- Dotenv ![Dotenv](https://img.shields.io/badge/-Dotenv-yellow)
