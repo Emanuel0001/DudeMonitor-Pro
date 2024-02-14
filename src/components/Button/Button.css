@@ -16,4 +16,13 @@ button {
   font-style: normal;
   font-weight: 600;
   line-height: 150%; /* 24px */
+  width: 100%;
+}
+
+.custom-button:disabled {
+  opacity: 0.5; /* Reduz a opacidade quando o botão está desativado */
+}
+
+.custom-button:not(:disabled) {
+  background-color: #0056b3; /* Altera a cor de fundo quando o botão está habilitado */
 }

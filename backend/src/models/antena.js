@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { userSchema } from "./user.js";
 
 const antenaSchema = mongoose.Schema(
   {
@@ -7,6 +8,7 @@ const antenaSchema = mongoose.Schema(
     ip: { type: String },
     status: { type: String },
     download: { type: String },
+    user: userSchema
   },
   { versionKey: false }
 );

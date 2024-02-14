@@ -1,0 +1,24 @@
+.cadastro-container {
+  width: 35vw;
+}
+
+.section-voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-voltar p {
+  margin-right: 10px;
+  color: white;
+}
+
+.section-voltar a {
+  cursor: pointer;
+  color: #0282a0;
+  border-bottom: solid 1px #0282a0;
+}
+
+.section-voltar a:hover {
+  color: #015c70;
+  border-bottom: solid 1px #015c70;
+}

@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import "./Monitor.css";
 import ColumnChart from "../PorcentageChart";
 import axios from "axios";
+import urls from "../config/urls";
 
 const Monitor = () => {
   const [totalAntenas, setTotalAntenas] = useState(0);
   const [antenasOnline, setTotalOnline] = useState(0);
   const [antenasOffline, setTotalOffline] = useState(0);
-  const url = "http://localhost:3002/antenas";
+  const url = urls.getAntenas;
   const data = [
     {
       name: "Total",
@@ -29,9 +30,15 @@ const Monitor = () => {
     },
   ];
   useEffect(() => {
+    const id = localStorage.getItem("idOfUser");
+
     const fetchData = async () => {
       try {
-        const response = await axios.get(url);
+        const response = await axios.get(url, {
+          params: {
+            user: id
+          }
+        });
         const dados = response.data;
         const status = response.status;
         

@@ -1,27 +1,46 @@
 import antena from "../models/antena.js";
-
+import { user } from "../models/user.js";
 class antenaControler {
-    static async listaAntenas(req, res) {
-        // Salvar busca antenas no banco de dados
-        const listaAntenas = await antena.find({});
-        res.status(200).json(listaAntenas);
-    }
 
-    static async cadastrarAntena (req, res) {
-      const { name, ip , status} = req.body;
-        try {
-            const novaAntena = new antena({
-              name: name,
-              ip: ip,
-              status: status
-            });
-            // Salvar a nova antena no banco de dados
-            await novaAntena.save();
-            res.status(201).json({ message: "Antena cadastrada com sucesso"});
-          } catch (error) {
-            res.status(400).json({ mensagem: 'Erro ao cadastrar antena', error: error.message });
-          }
+  static async listaAntenas (req, res) {
+    try {
+      const listaAntenas = await antena.find({});
+      res.status(200).json({ listaAntenas });
+    } catch (error) {
+      res.status(500).json({ message: `${error} - erro ao buscar antenas` });
     }
+  }  
+  static async listaAntenasPorUsuario(req, res) {
+    const id = req.query.user;
+    try {
+      const listaAntenas = await antena.find({ 'user._id': id });
+      res.status(200).json(listaAntenas);
+    } catch (error) {
+      res
+        .status(500)
+        .json({ message: `${error} - Erro ao buscar antenas do Usuário` });
+    }
+  }
+
+  static async cadastrarAntena(req, res) {
+    const novaAntena = req.body;
+
+    try {
+      const usuarioEncontrado = await user.findById(novaAntena.user);
+      const antenaCompleta = {
+        ...novaAntena,
+        user: { ...usuarioEncontrado._doc },
+      };
+      const antenaCadastrada = await antena.create(antenaCompleta);
+      res
+        .status(201)
+        .json({ message: "Antena cadastrada com sucesso", antenaCadastrada });
+    } catch (error) {
+      res
+        .status(400)
+        .json({ mensagem: "Erro ao cadastrar antena", error: error.message });
+    }
+  }
 }
 
 export default antenaControler;

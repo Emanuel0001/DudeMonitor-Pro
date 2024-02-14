@@ -2,7 +2,7 @@ import './Button.css'
 
 const Button = ({value, isDisabled}) => {
     return (
-            <button disabled={isDisabled}>{value}</button>
+            <button class="custom-button" disabled={isDisabled}>{value}</button>
     )
 }
 

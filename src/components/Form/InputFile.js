@@ -1,23 +1,19 @@
 import "./Input.css";
 
-const InputFile = ({onDataChange}) => {
-    const handleFileChange = (event) => {
-        const newFile = event.target.value;
-        onDataChange(newFile);
-    }
+const InputFile = ({label, type, placeholder, onChange}) => {
     return (
       <div>
       <label className="label" htmlFor="selecao-arquivo">
-        Backup:
+      {`${label}:`}
       </label>
       <label id="file" htmlFor="selecao-arquivo">
         Selecionar um arquivo &#187;
       </label>
       <input
         id="selecao-arquivo"
-        type="file"
-        placeholder="digite o SSID da antena"
-        onChange={handleFileChange}
+        type={type}
+        placeholder={placeholder}
+        onChange={onChange}
       />
     </div>
     )

@@ -2,15 +2,22 @@ import { useEffect, useState } from "react";
 import "./Antenas.css";
 import { FaFileDownload } from "react-icons/fa";
 import axios from "axios";
+import urls from "../config/urls";
 
 const Antenas = () => {
   const [antenas, setAntenas] = useState([]);
-  const url = "http://localhost:3002/antenas";
+  const url = urls.getAntenas;
 
   useEffect(() => {
+    const id = localStorage.getItem("idOfUser");
+
     const buscarAntenas = () => {
       axios
-        .get(url)
+        .get(url, {
+          params: {
+            user: id
+          }
+        })
         .then((response) => {
           const data = response.data;
           setAntenas(data);

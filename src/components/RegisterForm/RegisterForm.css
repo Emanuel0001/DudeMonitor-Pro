@@ -1,0 +1,15 @@
+.container-cadastro-usuario {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+
+.custom-button:disabled {
+    opacity: 0.5; /* Reduz a opacidade quando o botão está desativado */
+  }
+  
+  .custom-button:not(:disabled) {
+    background-color: #0056b3; /* Altera a cor de fundo quando o botão está habilitado */
+  }

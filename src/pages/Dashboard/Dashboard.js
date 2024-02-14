@@ -7,7 +7,7 @@ import Cadastro from "../../components/AntenaCadastroForm";
 import axios from "axios";
 import urls from "../../components/config/urls";
 import { Navigate } from "react-router-dom";
-import Buttonlogout from '../../components/logout/index'
+
 function Dashboard() {
   const [windowOpen, setWindowOpen] = useState("monitor");
   const [isUserLogged, setUserLogged] = useState(false);

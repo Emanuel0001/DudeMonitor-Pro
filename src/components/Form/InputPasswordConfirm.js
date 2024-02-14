@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import './Input.css'
 
-const InputPassword= ({ onPasswordChange }) => {
+const InputPasswordConfirm= ({ onPasswordChange2 }) => {
   const [isPasswordValid, setIsPasswordValid] = useState(false)
   
   const handlePasswordChange = (event) => {
-    const newPassword = event.target.value;
-    onPasswordChange && onPasswordChange(newPassword, isPasswordValid);
-      const div = document.getElementById("password")
-      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    const newPassword2 = event.target.value;
 
-      if(passwordRegex.test(newPassword)) {
+    onPasswordChange2 && onPasswordChange2(newPassword2, isPasswordValid);
+    
+      const div = document.getElementById("password2")
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+     
+      if(passwordRegex.test(newPassword2)) {
           div.style = "color: purple"
           div.style = "border: solid 1px #633cff"
           setIsPasswordValid(true)
@@ -19,19 +21,18 @@ const InputPassword= ({ onPasswordChange }) => {
         div.style = "color: red"
         div.style = "border: solid 1px red"
         setIsPasswordValid(false)
-  
       }
     }
  
  
   return (
     <div>
-      <label htmlFor="password" className="label">Password:</label>
+      <label htmlFor="password" className="label">Confirm Password:</label>
         <input
           type="password"
-          placeholder="Digite sua senha"
+          placeholder="Confirme sua senha"
           name="password"
-          id='password'
+          id='password2'
           onChange={handlePasswordChange}
           required
         />
@@ -40,4 +41,4 @@ const InputPassword= ({ onPasswordChange }) => {
   );
 }
 
-export default InputPassword;
+export default InputPasswordConfirm;
