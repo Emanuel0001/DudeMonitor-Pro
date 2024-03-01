@@ -1,7 +1,13 @@
 import antena from "../models/antena.js";
 import { user } from "../models/user.js";
 class antenaControler {
-
+  static async dadosAntenas (req, res) {
+    const dados = req.body;
+    console.log('Dados recebidos:', dados);
+    if(dados) {
+      res.status(200).json({ message: "dados ok" })
+    }
+  }
   static async listaAntenas (req, res) {
     try {
       const listaAntenas = await antena.find({});

@@ -5,6 +5,7 @@ const routes = express.Router();
 routes.get('/antenas',  antenaControler.listaAntenas);
 routes.get('/antenas/busca',  antenaControler.listaAntenasPorUsuario);
 routes.post('/antenas', antenaControler.cadastrarAntena);
+routes.post('/dadosAntenas', antenaControler.dadosAntenas);
 
 export default routes;
 
