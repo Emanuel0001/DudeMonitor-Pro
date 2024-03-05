@@ -1,13 +1,35 @@
 import antena from "../models/antena.js";
 import { user } from "../models/user.js";
+
+let antenasVerificadas = [];
+console.log('antenas',antenasVerificadas)
 class antenaControler {
-  static async dadosAntenas (req, res) {
+  
+  static async dadosAntenas(req, res) {
     const dados = req.body;
     console.log('Dados recebidos:', dados);
-    if(dados) {
-      res.status(200).json({ message: "dados ok" })
+  
+    if (!dados) {
+      return res.status(400).json({ message: "error dados inválidos" });
+    }
+  
+    try {
+      await Promise.all(dados.map(async (antenaData) => {
+        const { ip, status } = antenaData;
+        await antena.findOneAndUpdate(
+          { ip: ip },
+          { $set: { status: status } },
+          { new: true }
+        );
+      }));
+  
+      // Se todas as atualizações foram bem-sucedidas, envie a resposta de sucesso
+      res.status(200).json({ message: "Dados das antenas atualizados com sucesso" });
+    } catch (error) {
+      res.status(500).json({ message: "Erro ao atualizar antenas: " + error });
     }
   }
+
   static async listaAntenas (req, res) {
     try {
       const listaAntenas = await antena.find({});

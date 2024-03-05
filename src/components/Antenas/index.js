@@ -9,26 +9,28 @@ const Antenas = () => {
   const url = urls.getAntenas;
 
   useEffect(() => {
-    const id = localStorage.getItem("idOfUser");
-
-    const buscarAntenas = () => {
-      axios
-        .get(url, {
-          params: {
-            user: id
-          }
-        })
-        .then((response) => {
-          const data = response.data;
-          setAntenas(data);
-        })
-        .catch((error) => console.log(error));
-    };
     buscarAntenas();
   }, []);
   
+  async function buscarAntenas()  { 
+    const id = localStorage.getItem("idOfUser");
+    axios
+      .get(url, {
+        params: {
+          user: id
+        }
+      })
+      .then(async (response) => {
+        const data = await response.data;
+        setAntenas(data);
+      })
+      .catch((error) => console.log(error));
+  };
+  setInterval(buscarAntenas, 1 * 30 * 1000);
+
+
   const verificaStatus = (status) => {
-    if (status === "online") {
+    if (status === "up") {
       return <span className="onlineStatus"></span>;
     } else {
       return <span className="offlineStatus"></span>;

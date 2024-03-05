@@ -30,9 +30,11 @@ const Monitor = () => {
     },
   ];
   useEffect(() => {
-    const id = localStorage.getItem("idOfUser");
-
+    fetchData();
+  }, []); // Certifique-se de incluir 'url' no array de dependências se 
+  
     const fetchData = async () => {
+    const id = localStorage.getItem("idOfUser");
       try {
         const response = await axios.get(url, {
           params: {
@@ -49,10 +51,10 @@ const Monitor = () => {
           let totalOffline = 0;
   
           for (let i = 0; i < lista.length; i++) {
-            if (lista[i].status === "online") {
+            if (lista[i].status === "up") {
               totalOnline++;
             }
-            if (lista[i].status === "offline") {
+            if (lista[i].status === "down") {
               totalOffline++;
             }
           }
@@ -67,9 +69,8 @@ const Monitor = () => {
         console.error("Erro ao buscar dados da API:", error);
       }
     };
-  
-    fetchData();
-  }, [url]); // Certifique-se de incluir 'url' no array de dependências se 
+
+  setInterval(fetchData, 1 * 30 * 1000);
 
   return (
     <main className="content-main">

@@ -23,8 +23,8 @@ async function executaBuscaAntenasEVerifica() {
 // Executa a função pela primeira vez
 executaBuscaAntenasEVerifica();
 
-// Define a função para ser executada a cada 5 minutos
-setInterval(executaBuscaAntenasEVerifica, 5 * 60 * 1000);
+// Define a função para ser executada a cada 1 minutos
+setInterval(executaBuscaAntenasEVerifica, 1 * 30 * 1000);
 
 export default routes;
 
