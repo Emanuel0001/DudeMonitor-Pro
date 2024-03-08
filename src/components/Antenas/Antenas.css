@@ -128,3 +128,9 @@
         opacity: 1;
     }
 }
+.deletaAntena {
+  color: rgb(246, 119, 119);
+}
+.deletaAntena:hover {
+  color: red;
+}

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./Antenas.css";
 import { FaFileDownload } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
+
 import axios from "axios";
 import urls from "../config/urls";
 
@@ -8,26 +10,39 @@ const Antenas = () => {
   const [antenas, setAntenas] = useState([]);
   const url = urls.getAntenas;
 
-  useEffect(() => {
-    buscarAntenas();
-  }, []);
-  
-  async function buscarAntenas()  { 
+  async function buscarAntenas() {
     const id = localStorage.getItem("idOfUser");
     axios
       .get(url, {
         params: {
-          user: id
-        }
+          user: id,
+        },
       })
       .then(async (response) => {
         const data = await response.data;
         setAntenas(data);
       })
       .catch((error) => console.log(error));
-  };
-  setInterval(buscarAntenas, 1 * 30 * 1000);
+  }
 
+  useEffect(() => {
+    buscarAntenas();
+  });
+
+  //  setInterval(buscarAntenas, 1 * 30 * 1000);
+  async function deletaAntena(item) {
+    const id = item._id;
+    const url = `${urls.deletaAntena}/${id}`; // Supondo que urls.deletaAntena contém a URL base para excluir uma antena
+    console.log("Clicou para deletar", id);
+    
+    try {
+        const response = await axios.delete(url);
+        const result = response.data;
+        console.log(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
   const verificaStatus = (status) => {
     if (status === "up") {
@@ -48,6 +63,11 @@ const Antenas = () => {
           {antenas.map((item, index) => (
             <li key={index}>
               <div className="titulo-e-estatus">
+                <AiFillDelete
+                  size={30}
+                  onClick={() => deletaAntena(item)} // Passando o item como argumento
+                  className="deletaAntena"
+                />
                 <h1>{item.name}</h1>
                 {verificaStatus(item.status)}
               </div>

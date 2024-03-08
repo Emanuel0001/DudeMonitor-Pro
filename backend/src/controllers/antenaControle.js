@@ -41,7 +41,7 @@ class antenaControler {
   static async listaAntenasPorUsuario(req, res) {
     const id = req.query.user;
     try {
-      const listaAntenas = await antena.find({ 'user._id': id });
+      const listaAntenas = await antena.find({ 'user._id': id }, { user: 0 }); // Exclui o campo 'password'
       res.status(200).json(listaAntenas);
     } catch (error) {
       res
@@ -69,6 +69,18 @@ class antenaControler {
         .json({ mensagem: "Erro ao cadastrar antena", error: error.message });
     }
   }
+
+  static async deletaAntena(req, res) {
+    try {
+        const idAntena = req.params.id; // Extrai o ID da antena dos parâmetros da URL
+        const resultado = await antena.deleteOne({ _id: idAntena });
+        console.log(resultado);
+        res.status(204).end();
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Erro ao excluir antena' });
+    }
 }
 
+}
 export default antenaControler;

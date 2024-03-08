@@ -13,9 +13,6 @@ async function executaBuscaAntenasEVerifica() {
         console.log('Dados enviados com sucesso:', dados);
         const response = await axios.post('http://localhost:3002/dadosAntenas', dados);
        console.log("status do envio",response.status)
-          
-       
-       
     } catch (error) {
         console.error('Erro ao buscar antenas:', error);
     }

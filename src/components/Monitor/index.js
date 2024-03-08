@@ -29,10 +29,7 @@ const Monitor = () => {
       fill: "#ff0000",
     },
   ];
-  useEffect(() => {
-    fetchData();
-  }, []); // Certifique-se de incluir 'url' no array de dependências se 
-  
+ 
     const fetchData = async () => {
     const id = localStorage.getItem("idOfUser");
       try {
@@ -69,7 +66,10 @@ const Monitor = () => {
         console.error("Erro ao buscar dados da API:", error);
       }
     };
-
+    useEffect(() => {
+      fetchData();
+    }); // Certifique-se de incluir 'url' no array de dependências se 
+    
   setInterval(fetchData, 1 * 30 * 1000);
 
   return (
